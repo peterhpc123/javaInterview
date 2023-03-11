@@ -1,6 +1,6 @@
 package com.example.orderservice.service;
 
-import com.example.orderservice.clients.UserClient;
+import com.example.feignapi.clients.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -11,9 +11,9 @@ public class OrderService {
 //    private RestTemplate restTemplate;
 
     @Autowired
-    private UserClient userClientl;
+    private UserClient userClient;
 
     public String queryUserIdByEureka(){
-        return userClientl.findById();
+        return userClient.findById();
     }
 }

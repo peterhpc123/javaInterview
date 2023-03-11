@@ -1,5 +1,6 @@
 package com.example.orderservice;
 
+import com.example.feignapi.clients.UserClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.net.URI;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(clients = UserClient.class)
 public class OrderServiceApplication {
 //    @Bean
 //    @LoadBalanced//support load balancer in ribbon

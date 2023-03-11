@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="user-service" />
         <module name="OrderService" />
         <module name="eureka-server" />
-        <module name="user-service" />
+        <module name="feign-api" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +18,7 @@
       <module name="OrderService" options="-parameters" />
       <module name="cloud-demo" options="" />
       <module name="eureka-server" options="-parameters" />
+      <module name="feign-api" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>
