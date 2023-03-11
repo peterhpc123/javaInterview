@@ -1,15 +1,19 @@
 package com.example.orderservice.service;
 
+import com.example.orderservice.clients.UserClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class OrderService {
+//    @Autowired
+//    private RestTemplate restTemplate;
+
     @Autowired
-    private RestTemplate restTemplate;
+    private UserClient userClientl;
 
     public String queryUserIdByEureka(){
-        return restTemplate.getForObject("http://userservice/actuator/info", String.class);
+        return userClientl.findById();
     }
 }
