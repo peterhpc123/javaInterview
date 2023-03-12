@@ -3,7 +3,10 @@ server:
 spring:
   application:
     name: userservice
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:10086/eureka
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:10086/eureka

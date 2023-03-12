@@ -24,6 +24,7 @@
         <module>eureka-server</module>
         <module>OrderService</module>
         <module>feign-api</module>
+        <module>gateway</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -32,6 +33,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.5.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

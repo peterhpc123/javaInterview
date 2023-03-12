@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://userservice
+          predicates:
+            - Path=/actuator/info/**
+server:
+  port: 10010

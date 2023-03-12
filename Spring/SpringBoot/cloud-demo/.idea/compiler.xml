@@ -10,6 +10,7 @@
         <module name="OrderService" />
         <module name="eureka-server" />
         <module name="feign-api" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
   </component>
@@ -19,6 +20,7 @@
       <module name="cloud-demo" options="" />
       <module name="eureka-server" options="-parameters" />
       <module name="feign-api" options="-parameters" />
+      <module name="gateway" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>
