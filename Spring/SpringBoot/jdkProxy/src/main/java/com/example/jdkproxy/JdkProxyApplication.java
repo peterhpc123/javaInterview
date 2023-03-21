@@ -11,6 +11,7 @@ public class JdkProxyApplication {
 
 	interface Foo{
 		void foo() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException;
+		void bar();
 	}
 	interface InvocationHandler{
 		void invoke(Method method, Object[] args) throws InvocationTargetException, IllegalAccessException;
@@ -20,6 +21,11 @@ public class JdkProxyApplication {
 		@Override
 		public void foo() {
 			System.out.println("This is target class!");
+		}
+
+		@Override
+		public void bar() {
+			System.out.println("This is bar method");
 		}
 	}
 	public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
@@ -31,6 +37,7 @@ public class JdkProxyApplication {
 			}
 		});
 		p.foo();
+		p.bar();
 	}
 
 }

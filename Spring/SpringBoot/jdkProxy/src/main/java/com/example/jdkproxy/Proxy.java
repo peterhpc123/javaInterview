@@ -13,4 +13,19 @@ public class Proxy implements JdkProxyApplication.Foo {
         Method foo= JdkProxyApplication.Foo.class.getMethod("foo");
         h.invoke(foo, new Object[0]);//forward call
     }
+
+    @Override
+    public void bar() {
+        try {
+            Method bar=JdkProxyApplication.Foo.class.getMethod("bar");
+            h.invoke(bar, new Object[0]);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
