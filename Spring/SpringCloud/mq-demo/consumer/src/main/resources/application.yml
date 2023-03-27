@@ -1,0 +1,13 @@
+logging:
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+spring:
+  rabbitmq:
+    host: 192.168.179.131 # rabbitMQ的ip地址
+    port: 5672 # 端口
+    username: itcast
+    password: 123456
+    virtual-host: /
+    listener:
+      simple:
+        prefetch: 1 #每次从队列中获取的消息数量为1，处理完才可以取下一个消息

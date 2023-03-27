@@ -1,15 +1,18 @@
 package com.example.springprinciple.pricinple;
 
+import com.example.springprinciple.webconfig.WebConfig;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebApplicationContext;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.ModelAndView;
@@ -58,32 +61,7 @@ public class TestApplicationContext {
         }
     }
 
-    @Configuration
-    static class WebConfig{
-        @Bean
-        public ServletWebServerFactory servletWebServerFactory(){
-            return new TomcatServletWebServerFactory();
-        }
-        @Bean
-        public DispatcherServlet dispatcherServlet(){
-            return new DispatcherServlet();
-        }
-        @Bean
-        public DispatcherServletRegistrationBean registrationBean(DispatcherServlet dispatcherServlet){
-            return new DispatcherServletRegistrationBean(dispatcherServlet, "/");
-        }
-        @Bean("/hello")
-        public Controller controller(){
-            return new Controller() {
-                @Override
-                public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-                    response.getWriter().println("hello world!");
-                    return null;
-                }
-            };
-        }
 
-    }
     public static void testAnnotationWebConfig(){
         AnnotationConfigServletWebServerApplicationContext context=new AnnotationConfigServletWebServerApplicationContext(WebConfig.class);
     }

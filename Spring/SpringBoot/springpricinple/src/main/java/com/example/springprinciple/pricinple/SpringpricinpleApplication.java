@@ -19,12 +19,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.lang.reflect.Field;
 import java.util.Map;
 import java.util.Scanner;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class SpringpricinpleApplication{
 
     @Configuration
@@ -55,12 +57,12 @@ public class SpringpricinpleApplication{
             this.bean1 = bean1;
         }
     }
+    @Controller
     static class Bean1{
-
     }
 
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
-        //ConfigurableApplicationContext context = SpringApplication.run(SpringpricinpleApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(SpringpricinpleApplication.class, args);
         /*
         * beanfactory实现
         * */
