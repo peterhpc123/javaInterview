@@ -1,7 +1,6 @@
 package cn.itcast.mq.spring;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +10,6 @@ import org.springframework.validation.ObjectError;
 import java.util.HashMap;
 import java.util.Map;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringAmqpTest {
     @Autowired
